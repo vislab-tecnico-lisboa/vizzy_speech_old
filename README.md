@@ -1,3 +1,3 @@
-# vizzy_wizzard_of_oz
+# vizzy_speech
 
-Software to perform Wizard-Of-Oz experiments with Vizzy
+Software for dialogue with Vizzy
