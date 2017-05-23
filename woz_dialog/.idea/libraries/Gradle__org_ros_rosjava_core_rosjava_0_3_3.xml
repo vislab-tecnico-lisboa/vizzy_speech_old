@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: org.ros.rosjava_core:rosjava:0.3.3">
+    <CLASSES>
+      <root url="jar:///opt/ros/kinetic/share/maven/org/ros/rosjava_core/rosjava/0.3.3/rosjava-0.3.3.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

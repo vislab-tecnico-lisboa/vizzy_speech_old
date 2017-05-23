@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="rosjava_actionlib-0.2.01">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/rosjava_actionlib/rosjava_actionlib/build/libs/rosjava_actionlib-0.2.0.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
