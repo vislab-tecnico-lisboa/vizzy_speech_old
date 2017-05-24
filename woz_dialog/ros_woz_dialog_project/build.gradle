@@ -40,7 +40,9 @@ dependencies {
   /* An external maven artifact dependency */
   compile 'org.ros.rosjava_core:rosjava:[0.3,0.4)'
   compile 'org.ros.rosjava_messages:actionlib:[0.1,)'
+  compile 'org.apache.httpcomponents:httpclient:[0.1,)'
   compile fileTree(dir: '../external_lib', include:'rosjava_actionlib-0.2.0.jar')
+  compile fileTree(dir: '../external_lib', include:'woz_dialog_msgs-0.1.1.jar')
   /* Example of a local subproject dependency */
   /* compile project(':sibling_gradle_project') */
 }

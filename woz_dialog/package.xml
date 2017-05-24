@@ -44,6 +44,9 @@
   <build_depend>actionlib_msgs</build_depend>
   <build_depend>rosjava_build_tools</build_depend>
   <build_depend>rosjava_actionlib</build_depend>
+  <build_depend>woz_dialog_msgs</build_depend>
+  <run_depend>woz_dialog_msgs</run_depend>
+
 
 
   <!-- The export tag contains other, unspecified, tags -->
