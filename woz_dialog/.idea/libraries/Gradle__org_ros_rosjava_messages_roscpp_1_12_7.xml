@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="Gradle: org.ros.rosjava_messages:roscpp:1.12.7">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/../../../devel/share/maven/org/ros/rosjava_messages/roscpp/1.12.7/roscpp-1.12.7.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

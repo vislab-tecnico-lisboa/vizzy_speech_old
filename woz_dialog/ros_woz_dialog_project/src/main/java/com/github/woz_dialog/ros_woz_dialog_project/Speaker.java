@@ -34,7 +34,6 @@ import javax.sound.sampled.UnsupportedAudioFileException;
 public class Speaker extends AbstractNodeMain implements ActionServerListener<SpeechActionGoal>{
 
 
-    boolean nodeRunning = true;
     Log log;
     private String VOICE = "Joana";
     private String LANGUAGE = "por-PRT";
@@ -59,11 +58,6 @@ public class Speaker extends AbstractNodeMain implements ActionServerListener<Sp
     public void onStart(ConnectedNode node) {
         log = node.getLog();
 
-
-        //SpeechActionResult result;
-        //String id;
-        //String errorMsg;
-
         as = new ActionServer<SpeechActionGoal, SpeechActionFeedback,
                 SpeechActionResult>(node, "/woz_dialog/speaker", SpeechActionGoal._TYPE,
                 SpeechActionFeedback._TYPE, SpeechActionResult._TYPE);
@@ -74,54 +68,9 @@ public class Speaker extends AbstractNodeMain implements ActionServerListener<Sp
             @Override
             public void run(){
 
-                nodeRunning = false;
-
                 System.out.println("Shuting down...");
             }
         });
-
-
-/*
-        while(nodeRunning) {
-            if (currentGoal != null) {
-                result = as.newResultMessage();
-
-                String language = currentGoal.getGoal().getLanguage();
-                String voice = currentGoal.getGoal().getVoice();
-                byte speed = currentGoal.getGoal().getSpeed();
-                String message = currentGoal.getGoal().getMessage();
-
-                String speedStr;
-
-                if (speed == SpeechGoal.FAST)
-                    speedStr = "fast";
-                else if (speed == SpeechGoal.VERYFAST)
-                    speedStr = "x-fast";
-                else if (speed == SpeechGoal.MEDIUM)
-                    speedStr = "medium";
-                else if (speed == SpeechGoal.SLOW)
-                    speedStr = "slow";
-                else if (speed == SpeechGoal.XSLOW)
-                    speedStr = "xslow";
-                else
-                    speedStr = "default";
-
-
-                result.getResult().setSuccess(doTTS(language, voice, speedStr, message));
-
-
-                id = currentGoal.getGoalId().getId();
-                as.setSucceed(id);
-                as.setGoalStatus(result.getStatus(), id);
-                System.out.println("Sending result...");
-                as.sendResult(result);
-                currentGoal = null;
-            }
-
-            sleep(100); //This shouldn't be done this way, but wtv. I'm out of time.
-
-
-        }*/
 
     }
 
