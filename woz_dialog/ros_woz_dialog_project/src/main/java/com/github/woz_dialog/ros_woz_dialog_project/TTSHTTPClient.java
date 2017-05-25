@@ -1,252 +1,366 @@
 package com.github.woz_dialog.ros_woz_dialog_project;
 
 
+// =================================================================
+
+// Copyright (C) 2017 João Avelino (javelino@isr.ist.utl.pt)
+
+// Copyright (C) 2011-2015 Pierre Lison (plison@ifi.uio.no)
+
+// Permission is hereby granted, free of charge, to any person
+// obtaining a copy of this software and associated documentation
+// files (the "Software"), to deal in the Software without restriction,
+// including without limitation the rights to use, copy, modify, merge,
+// publish, distribute, sublicense, and/or sell copies of the Software,
+// and to permit persons to whom the Software is furnished to do so,
+// subject to the following conditions:
+
+// The above copyright notice and this permission notice shall be
+// included in all copies or substantial portions of the Software.
+
+// THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+// EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+// MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+// IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+// CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+// TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+// SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+// =================================================================
+
+
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.OutputStream;
-import java.io.UnsupportedEncodingException;
+import java.nio.ByteBuffer;
+import java.nio.ByteOrder;
+import java.util.logging.*;
 import java.net.URI;
-import java.security.KeyManagementException;
-import java.security.NoSuchAlgorithmException;
-import java.util.ArrayList;
-import java.util.List;
-
-import javax.net.ssl.SSLContext;
-import javax.net.ssl.TrustManager;
-import javax.net.ssl.X509TrustManager;
 
 
-import org.apache.http.Header;
 import org.apache.http.HttpEntity;
 import org.apache.http.HttpResponse;
-import org.apache.http.HttpVersion;
-import org.apache.http.NameValuePair;
-import org.apache.http.client.HttpClient;
 import org.apache.http.client.methods.HttpPost;
-import org.apache.http.client.utils.URIUtils;
-import org.apache.http.client.utils.URLEncodedUtils;
-import org.apache.http.conn.scheme.Scheme;
-import org.apache.http.conn.ssl.SSLSocketFactory;
+import org.apache.http.client.utils.URIBuilder;
+import org.apache.http.entity.ByteArrayEntity;
 import org.apache.http.entity.StringEntity;
-import org.apache.http.impl.client.DefaultHttpClient;
-import org.apache.http.message.BasicNameValuePair;
-import org.apache.http.params.BasicHttpParams;
-import org.apache.http.params.HttpParams;
-import org.apache.http.params.HttpProtocolParams;
+import org.apache.http.impl.client.CloseableHttpClient;
+import org.apache.http.impl.client.HttpClientBuilder;
+
+import javax.sound.sampled.AudioFileFormat;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.LineUnavailableException;
+import javax.sound.sampled.SourceDataLine;
+import javax.sound.sampled.UnsupportedAudioFileException;
+
+import org.apache.commons.logging.Log;
+import org.apache.commons.logging.LogFactory;
+
+import java.io.ByteArrayInputStream;
+import java.io.ByteArrayOutputStream;
+
+
+
 
 public class TTSHTTPClient {
 
-    private String APP_ID = "Insert Your App Id";
-    private String APP_KEY = "Insert Your 128-Byte App Key";
-    private String DEVICE_ID = "0000";
-    private String VOICE = "Samantha";
-    private String LANGUAGE = "en_US";
-    private String CODEC = "audio/x-wav;codec=pcm;bit=16;rate=22000";	//MP3
-    private String TEXT = "Hello World. This is a greeting from Nuance.";
+
+
+    private String APP_ID = "app ID";
+    private String APP_KEY = "128 bit";
+    private String VOICE = "Joana";
+    private String LANGUAGE = "por-PRT";
 
     private static short PORT = (short) 443;
-    private static String HOSTNAME = "tts.nuancemobility.net";
+    private static String HOSTNAME = "sslsandbox-nmdp.nuancemobility.net";
     private static String TTS = "/NMDPTTSCmdServlet/tts";
 
-    private HttpClient httpclient = null;
+    AudioInputStream stream;
+    AudioFormat format;
+    byte[] data;
 
-    private URI uri;
-    private HttpPost httppost;
-    HttpResponse response;
+    int currentPos;
 
 
-    public TTSHTTPClient(String app_id, String app_key, String device_id, String voice, String language, String codec)
+    /** HTTP client and URI for the speech recognition */
+    CloseableHttpClient asrClient;
+    URI asrURI;
+
+    /** HTTP client and URI for the speech synthesis */
+    CloseableHttpClient ttsClient;
+    URI ttsURI;
+
+    final static Logger log = Logger.getLogger("ros_woz_speaker");
+
+
+
+
+    public TTSHTTPClient(String app_id, String app_key, String voice, String language)
     {
         APP_ID = app_id;
         APP_KEY = app_key;
-        DEVICE_ID = device_id;
         VOICE = voice;
-        CODEC = codec;
+        LANGUAGE = language;
+
+        buildClients();
 
     }
 
-    public void performTTS(String TEXT)
-    {
+    public void synthesise(String utterance) throws Exception {
+
+
         try {
-            httpclient = getHttpClient();
-            uri = getURI();
-            httppost = getHeader(uri, TEXT);
+            log.fine("calling Nuance server to synthesise utterance \"" + utterance
+                    + "\"");
 
-            System.out.println("executing request " + httppost.getRequestLine());
+            HttpPost httppost = new HttpPost(ttsURI);
+            httppost.addHeader("Content-Type", "text/plain");
+            httppost.addHeader("Accept", "audio/x-wav;codec=pcm;bit=16;rate=16000");
+            HttpEntity entity = new StringEntity(utterance);
 
-            response = httpclient.execute(httppost);
+            //HttpEntity entity = new ByteArrayEntity(utterance.getBytes("UTF-8"));
 
-            processResponse(response);
+            httppost.setEntity(entity);
 
-        } catch (NoSuchAlgorithmException e) {
-            e.printStackTrace();
-        } catch (KeyManagementException e) {
-            e.printStackTrace();
-        } catch (Exception e) {
-            e.printStackTrace();
-        }finally {
-            // When HttpClient instance is no longer needed,
-            // shut down the connection manager to ensure
-            // immediate deallocation of all system resources
-            if(httpclient != null)
-               httpclient.getConnectionManager().shutdown();
-        }
+            HttpResponse response = ttsClient.execute(httppost);
 
-    }
+            HttpEntity resEntity = response.getEntity();
 
 
 
-    private HttpClient getHttpClient() throws NoSuchAlgorithmException, KeyManagementException
-    {
-        // Standard HTTP parameters
-        HttpParams params = new BasicHttpParams();
-        HttpProtocolParams.setVersion(params, HttpVersion.HTTP_1_1);
-        HttpProtocolParams.setContentCharset(params, "UTF-8");
-        HttpProtocolParams.setUseExpectContinue(params, false);
-
-        // Initialize the HTTP client
-        httpclient = new DefaultHttpClient(params);
-
-        // Initialize/setup SSL
-        TrustManager easyTrustManager = new X509TrustManager() {
-            @Override
-            public void checkClientTrusted(
-                    java.security.cert.X509Certificate[] arg0, String arg1)
-                    throws java.security.cert.CertificateException {
-                // TODO Auto-generated method stub
+            if (resEntity == null
+                    || response.getStatusLine().getStatusCode() != 200) {
+                System.out.println("Response status: " + response.getStatusLine());
+                throw new Exception("Response status: " + response.getStatusLine());
             }
 
-            @Override
-            public void checkServerTrusted(
-                    java.security.cert.X509Certificate[] arg0, String arg1)
-                    throws java.security.cert.CertificateException {
-                // TODO Auto-generated method stub
-            }
+            format = new AudioFormat(16000, 16, 1, true, false);
 
-            @Override
-            public java.security.cert.X509Certificate[] getAcceptedIssuers() {
-                // TODO Auto-generated method stub
-                return null;
-            }
-        };
+            System.out.println(response.getStatusLine().getStatusCode());
 
-        SSLContext sslcontext = SSLContext.getInstance("TLS");
-        sslcontext.init(null, new TrustManager[] { easyTrustManager }, null);
-        SSLSocketFactory sf = new SSLSocketFactory(sslcontext);
-        sf.setHostnameVerifier(SSLSocketFactory.ALLOW_ALL_HOSTNAME_VERIFIER);
-        Scheme sch = new Scheme("https", sf, PORT);	// PORT = 443
-        httpclient.getConnectionManager().getSchemeRegistry().register(sch);
+            data = new byte[0];
+            write(resEntity.getContent());
+            httppost.releaseConnection();
 
-        // Return the initialized instance of our httpclient
-        return httpclient;
-    }
 
-    private URI getURI() throws Exception
-    {
-        List<NameValuePair> qparams = new ArrayList<NameValuePair>();
+            //Get the file path
+            String basepath = System.getProperty("user.home");
+            basepath = basepath + "/wav/" + LANGUAGE + "/" + VOICE;
+            File dir = new File(basepath);
 
-        qparams.add(new BasicNameValuePair("appId", APP_ID));
-        qparams.add(new BasicNameValuePair("appKey", APP_KEY));
-        qparams.add(new BasicNameValuePair("id",  DEVICE_ID));
-        qparams.add(new BasicNameValuePair("voice", VOICE));
-        //qparams.add(new BasicNameValuePair("ttsLang", LANGUAGE));
 
-        URI uri = URIUtils.createURI("https", HOSTNAME, PORT, TTS, URLEncodedUtils.format(qparams, "UTF-8"), null);
-
-        return uri;
-    }
-
-    private HttpPost getHeader(URI uri, String TEXT) throws UnsupportedEncodingException
-    {
-        HttpPost httppost = new HttpPost(uri);
-        httppost.addHeader("Content-Type",  "text/plain");
-        httppost.addHeader("Accept", CODEC);
-
-        // We'll also set the content of the POST request now...
-        HttpEntity entity = new StringEntity(TEXT, "utf-8");
-
-        this.TEXT = TEXT;
-
-        httppost.setEntity(entity);
-
-        return httppost;
-    }
-
-    private void processResponse(HttpResponse response) throws IllegalStateException, IOException
-    {
-        HttpEntity resEntity = response.getEntity();
-
-        System.out.println("----------------------------------------");
-        System.out.println(response.getStatusLine());
-
-        // The request failed. Check out the status line to see what the problem is.
-        //	Typically an issue with one of the parameters passed in...
-        if (resEntity == null)
-            return;
-
-        // Grab the date
-        Header date = response.getFirstHeader("Date");
-        if( date != null )
-            System.out.println("Date: " + date.getValue());
-
-        // ALWAYS grab the Nuance-generated session id. Makes it a WHOLE LOT EASIER for us to hunt down your issues in our logs
-        Header sessionid = response.getFirstHeader("x-nuance-sessionid");
-        if( sessionid != null )
-            System.out.println("x-nuance-sessionid: " + sessionid.getValue());
-
-        // Check to see if we have a 200 OK response. Otherwise, review the technical documentation to understand why you recieved
-        //	the HTTP error code that came back
-        String status = response.getStatusLine().toString();
-        boolean okFound = ( status.indexOf("200 OK") > -1 );
-        if( okFound )
-        {
-            System.out.println("Response content length: " + resEntity.getContentLength());
-            System.out.println("Chunked?: " + resEntity.isChunked());
-        }
-
-        // Grab the returned audio (or error message) returned in the body of the response
-        InputStream in = resEntity.getContent();
-        byte[] buffer = new byte[1024 * 16];
-        int len;
-
-        // Open up a stream to write audio to file
-        OutputStream fos = null;
-        String file = null;
-        if (okFound)	// We have audio
-        {
-            file = TEXT + ".wav";
-        }  else			// No audio...
-        {
-            file = "log-err-"+ TEXT + ".htm";
-        }
-
-        // Attempt to write to file...
-        try {
-            fos = new FileOutputStream(file);
-
-            while((len = in.read(buffer)) > 0){
-                fos.write(buffer, 0 , len);
-            }
-        } catch (Exception e) {
-            System.err.println("Failed to save file: " + e.getMessage());
-            e.printStackTrace();
-        }
-
-        // Finish up...
-        finally {
-            if(fos != null)
-                try {
-                    fos.close();
-                    System.out.println("Saved file: " + file);
-                } catch (IOException e) {
+            if(!dir.exists())
+            {
+                // attempt to create the directory here
+                boolean successful = dir.mkdirs();
+                if (successful)
+                {
+                    // creating the directory succeeded
+                    System.out.println("directory was created successfully");
                 }
+                else
+                {
+                    // creating the directory failed
+                    log.severe("failed trying to create the directory");
+                    throw new Exception("failed trying to create the directory");
+                }
+
+                return;
+
+            }
+
+            String fullpath = basepath + "/" + utterance.toLowerCase() + ".wav";
+
+            //Record the sound
+            generateFile(data, new File(fullpath));
+
+
+            //Play the received sound
+
+            SourceDataLine line =
+                    AudioSystem.getSourceDataLine(format);
+
+            line.open(format);
+            line.start();
+
+            rewind();
+
+            int nBytesRead = 0;
+            byte[] abData = new byte[512 * 16];
+
+            while (nBytesRead != -1) {
+                nBytesRead = read(abData, 0, abData.length);
+
+
+                if (nBytesRead >= 0) {
+                    line.write(abData, 0, nBytesRead);
+                }
+            }
+
+            line.drain();
+            if (line.isOpen()) {
+                line.close();
+            }
+
+
+        }catch (LineUnavailableException e) {
+            log.warning("Audio line is unavailable: " + e);
+            throw e;
+        }
+        catch (Exception e) {
+            throw e;
         }
 
-        System.out.println("----------------------------------------");
-
-        // And we're done.
-        resEntity.consumeContent();
     }
+
+
+
+    /**
+     * Builds the REST clients for speech recognition and synthesis.
+     *
+     * @
+     */
+    private void buildClients() {
+
+        // Initialize the HTTP clients
+        asrClient = HttpClientBuilder.create().build();
+        ttsClient = HttpClientBuilder.create().build();
+
+        try {
+
+            URIBuilder builder = new URIBuilder();
+            builder.setScheme("https");
+            builder.setHost("dictation.nuancemobility.net");
+            builder.setPort(443);
+            builder.setPath("/NMDPAsrCmdServlet/dictation");
+            builder.setParameter("appId", APP_ID);
+            builder.setParameter("appKey", APP_KEY);
+            builder.setParameter("id", "0000");
+            asrURI = builder.build();
+            builder.setHost("tts.nuancemobility.net");
+            builder.setPath("/NMDPTTSCmdServlet/tts");
+            builder.setParameter("ttsLang", LANGUAGE);
+            builder.setParameter("voice", VOICE);
+            ttsURI = builder.build();
+
+        }
+        catch (Exception e) {
+            throw new RuntimeException("cannot build client: " + e);
+        }
+    }
+
+    public void write(byte[] buffer) {
+
+        byte[] newData = new byte[data.length + buffer.length];
+        System.arraycopy(data, 0, newData, 0, data.length);
+        System.arraycopy(buffer, 0, newData, data.length, buffer.length);
+        data = newData;
+    }
+
+    public void write(InputStream stream) {
+        try {
+            int nRead;
+            byte[] buffer = new byte[1024 * 16];
+            while ((nRead = stream.read(buffer, 0, buffer.length)) != -1) {
+                byte[] newData = new byte[data.length + nRead];
+                System.arraycopy(data, 0, newData, 0, data.length);
+                System.arraycopy(buffer, 0, newData, data.length, nRead);
+                data = newData;
+            }
+        }
+        catch (IOException e) {
+            log.warning("Cannot write the stream to the speech data");
+        }
+    }
+
+    public int read() {
+        if (currentPos < data.length) {
+            return data[currentPos++];
+        }
+        else {
+            return -1;
+        }
+    }
+
+
+    public int read(byte[] buffer, int offset, int length) {
+        if (currentPos >= data.length) {
+          return -1;
+        }
+
+        int i = 0;
+        for (i = 0; i < length & (currentPos + i) < data.length; i++) {
+            buffer[offset + i] = data[currentPos + i];
+        }
+        currentPos += i;
+        return i;
+    }
+
+    public void rewind() {
+        currentPos = 0;
+    }
+
+    public static void generateFile(byte[] data, File outputFile) {
+        try {
+            AudioInputStream audioStream = getAudioStream(data);
+            if (outputFile.getName().endsWith("wav")) {
+                int nb = AudioSystem.write(audioStream, AudioFileFormat.Type.WAVE,
+                        new FileOutputStream(outputFile));
+                log.fine("WAV file written to " + outputFile.getCanonicalPath()
+                        + " (" + (nb / 1000) + " kB)");
+            }
+            else {
+                throw new RuntimeException("Unsupported encoding " + outputFile);
+            }
+        }
+        catch (Exception e) {
+            e.printStackTrace();
+            throw new RuntimeException("could not generate file: " + e);
+        }
+    }
+
+
+    public static AudioInputStream getAudioStream(byte[] byteArray) {
+        try {
+            try {
+                ByteArrayInputStream byteStream =
+                        new ByteArrayInputStream(byteArray);
+                return AudioSystem.getAudioInputStream(byteStream);
+            }
+            catch (UnsupportedAudioFileException e) {
+                byteArray = addWavHeader(byteArray);
+                ByteArrayInputStream byteStream =
+                        new ByteArrayInputStream(byteArray);
+                return AudioSystem.getAudioInputStream(byteStream);
+            }
+        }
+        catch (IOException | UnsupportedAudioFileException e) {
+            throw new RuntimeException("cannot convert bytes to audio stream: " + e);
+        }
+    }
+
+    private static byte[] addWavHeader(byte[] bytes) throws IOException {
+
+        ByteBuffer bufferWithHeader = ByteBuffer.allocate(bytes.length + 44);
+        bufferWithHeader.order(ByteOrder.LITTLE_ENDIAN);
+        bufferWithHeader.put("RIFF".getBytes());
+        bufferWithHeader.putInt(bytes.length + 36);
+        bufferWithHeader.put("WAVE".getBytes());
+        bufferWithHeader.put("fmt ".getBytes());
+        bufferWithHeader.putInt(16);
+        bufferWithHeader.putShort((short) 1);
+        bufferWithHeader.putShort((short) 1);
+        bufferWithHeader.putInt(16000);
+        bufferWithHeader.putInt(32000);
+        bufferWithHeader.putShort((short) 2);
+        bufferWithHeader.putShort((short) 16);
+        bufferWithHeader.put("data".getBytes());
+        bufferWithHeader.putInt(bytes.length);
+        bufferWithHeader.put(bytes);
+        return bufferWithHeader.array();
+    }
+
 
 }
