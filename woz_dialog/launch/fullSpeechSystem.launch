@@ -1,0 +1,9 @@
+<?xml version="1.0"?>
+
+<launch>
+
+   
+  <node pkg="woz_dialog" type="run_woz_node.sh"
+	name="woz_speaker" output="screen" args="Speaker">
+  </node>
+</launch>
