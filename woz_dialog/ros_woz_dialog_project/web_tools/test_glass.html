@@ -6,75 +6,6 @@
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 	<script type="text/javascript" src="roslibjs/eventemitter2.js"></script>
 	<script type="text/javascript" src="roslibjs/roslib.js"></script>
-	<!-- <script type="text/javascript" charset="utf-8" src="js/lang_pt.js"></script> -->
-
-	<script type="text/javascript" type="text/javascript">
-
-	  var greeting = 'Olá';
-	  var confirm = 'Sim';
-	  var deny = 'Não';
-	  var goodbye = 'Adeus. E obrigado pela atenção';
-	  var apologize = 'Desculpe'
-	  var thank = 'Obrigado.'
-	  var excuse = 'Com licença.'
-	  var youWelcome = 'De nada.'
-
-
-
-	  var ros = new ROSLIB.Ros({
-	    url : 'ws://10.0.28.117:9090'
-	  });
-
-	  var speechClient = new ROSLIB.ActionClient({
-	    ros : ros,
-	    serverName : '/woz_dialog/speaker',
-	    actionName : 'woz_dialog_msgs/SpeechAction'
-	  });
-
-	  var goal = new ROSLIB.Goal({
-	    actionClient : speechClient,
-	    goalMessage : {
-	      language : 'por-PRT',
-	      voice: 'Joana',
-	      message: 'mensagem vazia'
-	    }
-	  });
-
-	  goal.on('feedback', function(feedback) {
-	    console.log('Feedback: ' + feedback.sequence);
-	  });
-
-	  goal.on('result', function(result) {
-	    console.log('Final Result: ' + result.success);
-	  });
-
-	  ros.on('connection', function() {
-	    console.log('Connected to websocket server.');
-	  });
-
-	  ros.on('error', function(error) {
-	    console.log('Error connecting to websocket server: ', error);
-	  });
-
-	  ros.on('close', function() {
-	    console.log('Connection to websocket server closed.');
-	  });
-	
-
-	  function speak(utterance){
-
-
-	  goal.goalMessage.goal.message=utterance;
-
-
-	  goal.send();
-
-	  }
-
-
-
-	  
-	</script>
 </head>
 <body>
 
@@ -91,7 +22,8 @@
    y="0px"
    x="0px"
    id="general_purpose"
-   version="1.1">
+   version="1.1"
+>
   <metadata
      id="metadata31">
     <rdf:RDF>
@@ -111,7 +43,7 @@
                         #menu {
                             display: block;
                             margin: 0 auto;
-                            /*overflow: visible;*/ /* uncomment this if you are using bouncing animations*/
+                            overflow: visible; /* uncomment this if you are using bouncing animations*/
                         }
 
                         a {
@@ -262,5 +194,5 @@
 
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
-<script type='text/javascript' src="js/general_purpose.js"></script>
+<script type='text/javascript' src="js/button_animator.js"></script>
 </html>

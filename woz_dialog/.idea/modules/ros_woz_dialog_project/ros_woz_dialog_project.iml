@@ -54,9 +54,6 @@
     <orderEntry type="library" name="Gradle: org.ros.rosjava_core:apache_xmlrpc_client:0.3.4" level="project" />
     <orderEntry type="library" name="Gradle: org.ros.rosjava_core:apache_xmlrpc_server:0.3.4" level="project" />
     <orderEntry type="library" name="Gradle: org.ros.rosjava_core:apache_xmlrpc_common:0.3.4" level="project" />
-    <orderEntry type="library" name="Gradle: org.ros.rosjava_messages:std_msgs:0.5.11" level="project" />
-    <orderEntry type="library" name="Gradle: org.ros.rosjava_messages:actionlib:1.11.8" level="project" />
-    <orderEntry type="library" name="Gradle: org.ros.rosjava_messages:roscpp:1.12.7" level="project" />
     <orderEntry type="module-library">
       <library name="Gradle: woz_dialog_msgs-0.1.1">
         <CLASSES>
@@ -70,5 +67,8 @@
     <orderEntry type="library" name="Gradle: org.apache.httpcomponents:httpcore:4.4.6" level="project" />
     <orderEntry type="library" name="Gradle: commons-logging:commons-logging:1.2" level="project" />
     <orderEntry type="library" name="Gradle: commons-codec:commons-codec:1.9" level="project" />
+    <orderEntry type="library" name="Gradle: org.ros.rosjava_messages:actionlib:1.11.5" level="project" />
+    <orderEntry type="library" name="Gradle: org.ros.rosjava_messages:roscpp:1.11.19" level="project" />
+    <orderEntry type="library" name="Gradle: org.ros.rosjava_messages:std_msgs:0.5.10" level="project" />
   </component>
 </module>

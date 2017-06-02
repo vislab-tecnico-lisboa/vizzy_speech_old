@@ -23,6 +23,8 @@ import java.lang.Runtime;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
+import javax.sound.sampled.LineEvent;
+import javax.sound.sampled.LineListener;
 import javax.sound.sampled.LineUnavailableException;
 import javax.sound.sampled.UnsupportedAudioFileException;
 
@@ -41,6 +43,10 @@ public class Speaker extends AbstractNodeMain implements ActionServerListener<Sp
 
     TTSHTTPClient ttshttpClient = null;
 
+    Clip clip;
+
+    boolean playingClip = false;
+
 
 
 
@@ -57,6 +63,20 @@ public class Speaker extends AbstractNodeMain implements ActionServerListener<Sp
     @Override
     public void onStart(ConnectedNode node) {
         log = node.getLog();
+
+        try {
+            clip = AudioSystem.getClip();
+            clip.addLineListener(new LineListener() {
+                public void update(LineEvent myLineEvent) {
+                    if (myLineEvent.getType() == LineEvent.Type.STOP) {
+                        clip.close();
+                        playingClip = false;
+                    }
+                }
+            });
+        } catch (LineUnavailableException e) {
+            e.printStackTrace();
+        }
 
         as = new ActionServer<SpeechActionGoal, SpeechActionFeedback,
                 SpeechActionResult>(node, "/woz_dialog/speaker", SpeechActionGoal._TYPE,
@@ -87,13 +107,16 @@ public class Speaker extends AbstractNodeMain implements ActionServerListener<Sp
 
         if(fileDir.exists())
         {
+            if(playingClip)
+                return false;
 
             System.out.println("File found. Playing it...");
             try {
                 AudioInputStream audioIn = AudioSystem.getAudioInputStream(fileDir);
-                Clip clip = AudioSystem.getClip();
+
                 clip.open(audioIn);
                 clip.start();
+                playingClip = true;
             } catch (UnsupportedAudioFileException e) {
                 e.printStackTrace();
             } catch (IOException e) {

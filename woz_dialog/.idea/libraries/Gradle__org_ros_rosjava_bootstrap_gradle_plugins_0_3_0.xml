@@ -1,7 +1,7 @@
 <component name="libraryTable">
   <library name="Gradle: org.ros.rosjava_bootstrap:gradle_plugins:0.3.0">
     <CLASSES>
-      <root url="jar://$USER_HOME$/catkin_ws/devel/share/maven/org/ros/rosjava_bootstrap/gradle_plugins/0.3.0/gradle_plugins-0.3.0.jar!/" />
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.ros.rosjava_bootstrap/gradle_plugins/0.3.0/9915d897f3b5049e99b268068978a1bca0ae7b5d/gradle_plugins-0.3.0.jar!/" />
     </CLASSES>
     <JAVADOC />
     <SOURCES />
