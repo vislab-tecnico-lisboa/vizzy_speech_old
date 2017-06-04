@@ -1,0 +1,95 @@
+<svg
+   width="232.89096mm"
+   height="140.00639mm"
+   viewBox="0 0 825.20419 496.08564"
+   id="btn_gameQuestions_full"
+   version="1.1">
+  <g
+     id="btn_gameQuestions">
+    <circle
+       r="102.62576"
+       cy="330.5495"
+       cx="413.97046"
+       id="circle9220"
+       style="fill:#fff8c6;fill-opacity:1;fill-rule:evenodd;stroke:#e4e9ec;stroke-width:16.54206657;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+    <text
+       transform="matrix(0.97084431,0.23971094,-0.23971094,0.97084431,0,0)"
+       font-size="85.5068"
+       id="text3847"
+       style="font-size:85.50289917px;font-family:GothamRounded-Bold;fill:#b2e3f8"
+       x="490.25586"
+       y="195.73091">?</text>
+    <g
+       id="g3849"
+       transform="translate(-546.93623,-489.73337)">
+      <path
+         d="m 946.757,777.824 c 7.873,0 15.341,-0.002 22.809,0.002 1.396,0 2.793,-0.008 4.189,0.035 2.02,0.061 3.117,1.158 3.138,3.152 0.046,4.748 0.071,9.498 -0.008,14.244 -0.036,2.156 -1.105,3.053 -3.382,3.07 -4.399,0.031 -8.799,0.01 -13.199,0.012 -0.752,0 -1.505,0 -2.338,0 0,4.625 0,9 0,13.635 0.809,0 1.551,0 2.293,0 11.174,0 22.347,-0.01 33.521,0.002 15.896,0.02 28.414,9.883 32.137,25.305 4.119,17.053 -7.707,35.242 -24.988,38.34 -2.32,0.414 -4.707,0.631 -7.063,0.635 -26.189,0.043 -52.377,0.027 -78.564,0.027 -18.956,-0.002 -33.706,-15.838 -32.344,-34.719 1.184,-16.398 15.263,-29.441 32.06,-29.572 11.383,-0.088 22.766,-0.016 34.148,-0.018 0.76,0 1.52,0 2.51,0 0.043,-0.85 0.109,-1.58 0.111,-2.313 0.012,-4.471 -0.015,-8.939 0.018,-13.408 0.021,-2.844 1.078,-3.898 3.954,-3.918 4.951,-0.033 9.901,-0.01 15,-0.01 0,-2.803 0,-5.488 0,-8.49 -0.702,0 -1.437,0 -2.17,0 -7.821,0 -15.644,0.008 -23.464,-0.002 -3.398,-0.004 -4.383,-0.988 -4.387,-4.332 -0.006,-3.492 -0.015,-6.984 0.002,-10.477 0.012,-2.438 1.039,-3.676 3.003,-3.688 1.961,-0.014 2.965,1.166 3.005,3.688 0.043,2.843 0.009,5.687 0.009,8.8 z m 8.109,40.35 c 0,-0.047 0,-0.092 0,-0.139 -12.776,0 -25.553,0 -38.33,0 -0.139,0 -0.279,0.002 -0.419,0 -16.085,-0.322 -26.745,12.42 -27.191,25.24 -0.487,13.988 11.013,26.832 24.982,26.912 27.019,0.152 54.038,0.057 81.059,0.057 0.975,0 1.965,0.02 2.926,-0.123 16.434,-2.428 24.314,-17.506 22.576,-29.428 -1.727,-11.836 -11.947,-22.162 -23.926,-22.443 -13.885,-0.326 -27.784,-0.076 -41.677,-0.076 z"
+         id="path3851"
+         style="clip-rule:evenodd;fill:#bcbec0;fill-rule:evenodd" />
+      <path
+         d="m 926.602,848.791 c 0,3.643 -0.061,6.98 0.023,10.313 0.049,1.945 -0.654,2.781 -2.677,2.748 -7.262,-0.113 -6.263,0.758 -6.316,-6.162 -0.018,-2.217 -0.003,-4.432 -0.003,-6.898 -3.466,0 -6.722,0.006 -9.978,-0.002 -2.798,-0.008 -3.154,-0.346 -3.15,-3.127 0.01,-7.139 -0.643,-5.924 5.965,-6.023 2.292,-0.035 4.584,-0.006 7.163,-0.006 0,-3.539 -0.009,-6.93 0.003,-10.322 0.008,-2.625 0.1,-2.709 2.715,-2.723 1.256,-0.008 2.521,0.098 3.765,-0.023 2.003,-0.195 2.557,0.762 2.509,2.582 -0.078,2.998 -0.021,6 -0.014,9 10e-4,0.408 0.052,0.816 0.098,1.486 3.477,0 6.867,-0.006 10.258,0.002 2.453,0.006 2.826,0.334 2.824,2.74 -0.008,6.832 0.711,6.459 -6.189,6.418 -2.228,-0.015 -4.454,-0.003 -6.996,-0.003 z"
+         id="path3853"
+         style="clip-rule:evenodd;fill:#bcbec0;fill-rule:evenodd" />
+      <path
+         d="m 990.881,839.615 c -3.4,-0.078 -6.184,-2.973 -6.137,-6.379 0.045,-3.293 3.156,-6.227 6.459,-6.092 3.242,0.133 6.096,3.123 6.047,6.336 -0.051,3.375 -2.998,6.213 -6.369,6.135 z"
+         id="path3855"
+         style="clip-rule:evenodd;fill:#bcbec0;fill-rule:evenodd" />
+      <path
+         d="m 977.966,844.1 c 3.342,0.02 6.163,2.781 6.185,6.055 0.025,3.404 -2.96,6.305 -6.438,6.26 -3.424,-0.045 -6.042,-2.846 -5.981,-6.396 0.056,-3.345 2.791,-5.943 6.234,-5.919 z"
+         id="path3857"
+         style="clip-rule:evenodd;fill:#bcbec0;fill-rule:evenodd" />
+      <path
+         d="m 998.074,845.775 c 3.389,0.039 6.096,2.779 6.082,6.152 -0.016,3.414 -2.857,6.188 -6.316,6.164 -3.461,-0.023 -6.068,-2.789 -6.016,-6.381 0.047,-3.358 2.803,-5.976 6.25,-5.935 z"
+         id="path3859"
+         style="clip-rule:evenodd;fill:#bcbec0;fill-rule:evenodd" />
+    </g>
+  </g>
+  <circle
+     r="41.566307"
+     cy="171.30687"
+     cx="64.510231"
+     id="btn_gameQuestions_1"
+     style="fill:#fafdfe;fill-opacity:1;fill-rule:evenodd;stroke:#e4e9ec;stroke-width:6.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <circle
+     style="fill:#fafdfe;fill-opacity:1;fill-rule:evenodd;stroke:#e4e9ec;stroke-width:6.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="btn_gameQuestions_2"
+     cx="156.39101"
+     cy="118.06673"
+     r="41.566307" />
+  <circle
+     r="41.566307"
+     cy="83.756874"
+     cx="254.76192"
+     id="btn_gameQuestions_3"
+     style="fill:#fafdfe;fill-opacity:1;fill-rule:evenodd;stroke:#e4e9ec;stroke-width:6.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <circle
+     style="fill:#fafdfe;fill-opacity:1;fill-rule:evenodd;stroke:#e4e9ec;stroke-width:6.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="btn_gameQuestions_4"
+     cx="358.65121"
+     cy="65.522263"
+     r="41.566307" />
+  <circle
+     r="41.566307"
+     cy="66.002121"
+     cx="464.93979"
+     id="btn_gameQuestions_5"
+     style="fill:#fafdfe;fill-opacity:1;fill-rule:evenodd;stroke:#e4e9ec;stroke-width:6.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <circle
+     style="fill:#fafdfe;fill-opacity:1;fill-rule:evenodd;stroke:#e4e9ec;stroke-width:6.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="btn_gameQuestions_6"
+     cx="568.68164"
+     cy="82.133949"
+     r="41.566307" />
+  <circle
+     r="41.566307"
+     cy="120.04274"
+     cx="667.29248"
+     id="btn_gameQuestions_7"
+     style="fill:#fafdfe;fill-opacity:1;fill-rule:evenodd;stroke:#e4e9ec;stroke-width:6.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <circle
+     style="fill:#fafdfe;fill-opacity:1;fill-rule:evenodd;stroke:#e4e9ec;stroke-width:6.69999981;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
+     id="btn_gameQuestions_8"
+     cx="759.1853"
+     cy="172.82713"
+     r="41.566307" />
+</svg>

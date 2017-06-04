@@ -1,0 +1,59 @@
+<svg
+   width="124.71484mm"
+   height="124.71823mm"
+   viewBox="0 0 441.90299 441.91499"
+   id="btn_yesno_full"
+   version="1.1">
+  <circle
+     r="157.108"
+     cy="189.45566"
+     cx="219.416"
+     id="btn_yesno"
+     style="fill:#fafdfe;fill-opacity:1;fill-rule:evenodd;stroke:#e4e9ec;stroke-width:25.32396126;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
+  <g
+     transform="translate(-136.19135,-225.69042)"
+     onclick="speak(yes)"
+     id="bnt_yes">
+    <path
+       id="path7126"
+       d="m 509.97735,413.77442 c 0,-84.41 -68.422,-152.83 -152.826,-152.83 -84.401,0 -152.825,68.42 -152.825,152.83 0,0.002 0,0.004 0,0.006 l 305.651,0 c 0,-0.002 0,-0.004 0,-0.006 z"
+       stroke-miterlimit="10"
+       style="fill:#93c954;stroke:#d0e39e;stroke-width:0.5;stroke-miterlimit:10" />
+    <rect
+       id="rect7130"
+       height="50.492001"
+       width="108.012"
+       y="319.13141"
+       x="303.13681"
+       style="fill:none" />
+    <text
+       id="text7132"
+       font-size="54.3647"
+       style="font-size:54.36470032px;font-family:GothamRounded-Bold;fill:#ffffff"
+       x="314.63058"
+       y="359.14453">Yes</text>
+  </g>
+  <g
+     transform="translate(-136.19135,-225.69042)"
+     onclick="speak(no)"
+     id="bnt_no">
+    <path
+       id="path7128"
+       d="m 204.32635,413.78042 c 0.003,84.401 68.426,152.819 152.825,152.819 84.402,0 152.822,-68.418 152.826,-152.819 l -305.651,0 z"
+       stroke-miterlimit="10"
+       style="fill:#f16566;stroke:#db242d;stroke-width:0.5;stroke-miterlimit:10" />
+    <rect
+       id="rect7134"
+       height="50.490002"
+       width="124.789"
+       y="460.55441"
+       x="294.74832"
+       style="fill:none" />
+    <text
+       id="text7136"
+       font-size="54.3647"
+       style="font-size:54.36470032px;font-family:GothamRounded-Bold;fill:#ffffff"
+       x="318.99728"
+       y="500.56442">No</text>
+  </g>
+</svg>
