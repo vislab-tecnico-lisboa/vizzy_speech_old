@@ -71,6 +71,20 @@ public class Speaker extends AbstractNodeMain implements ActionServerListener<Sp
                     if (myLineEvent.getType() == LineEvent.Type.STOP) {
                         clip.close();
                         playingClip = false;
+
+
+
+                        SpeechActionResult result;
+                        result = as.newResultMessage();
+
+                        result.getResult().setSuccess(true);
+                        String id = currentGoal.getGoalId().getId();
+                        as.setGoalStatus(result.getStatus(), id);
+
+                        as.setSucceed(id);
+
+                        as.sendResult(result);
+
                     }
                 }
             });
@@ -96,6 +110,10 @@ public class Speaker extends AbstractNodeMain implements ActionServerListener<Sp
 
     boolean doTTS(String language, String voice, String speed, String message)
     {
+
+        SpeechActionResult result;
+        result = as.newResultMessage();
+
 
         //Audio file name and path
         //Get the file path
@@ -148,6 +166,15 @@ public class Speaker extends AbstractNodeMain implements ActionServerListener<Sp
 
             try {
                 ttshttpClient.synthesise(message);
+
+                result.getResult().setSuccess(true);
+                String id = currentGoal.getGoalId().getId();
+                as.setGoalStatus(result.getStatus(), id);
+
+                as.setSucceed(id);
+
+                as.sendResult(result);
+
             } catch (LineUnavailableException e) {
                 e.printStackTrace();
                 return false;
@@ -194,14 +221,10 @@ public class Speaker extends AbstractNodeMain implements ActionServerListener<Sp
             speedStr = "default";
 
 
-        result.getResult().setSuccess(doTTS(language, voice, speedStr, message));
-
+        doTTS(language, voice, speedStr, message);
 
         id = currentGoal.getGoalId().getId();
-        as.setSucceed(id);
         as.setGoalStatus(result.getStatus(), id);
-        System.out.println("Sending result...");
-        as.sendResult(result);
     }
 
     @Override

@@ -15,7 +15,7 @@ def test_action():
 
     client.wait_for_server()
 
-    goal = woz_dialog_msgs.msg.SpeechGoal(language="por-PRT", voice="Joana", message="Caro senhor, como vai a vida?")
+    goal = woz_dialog_msgs.msg.SpeechGoal(language="por-PRT", voice="Joana", message="Epa funciona caracas, ja estou farto disto")
 
     client.send_goal(goal)
 
