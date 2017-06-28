@@ -39,8 +39,8 @@
       <file leaf-file-name="Speaker.java" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/ros_woz_dialog_project/src/main/java/com/github/woz_dialog/ros_woz_dialog_project/Speaker.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="507">
-              <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+            <state relative-caret-position="553">
+              <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -1478,7 +1478,7 @@
         <state relative-caret-position="324">
           <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding>
-            <element signature="e#0#595#0" expanded="true" />
+            <element signature="e#0#595#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1506,7 +1506,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#595#0" expanded="true" />
+            <element signature="e#0#595#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1542,7 +1542,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#595#0" expanded="true" />
+            <element signature="e#0#595#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1578,7 +1578,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#595#0" expanded="true" />
+            <element signature="e#0#595#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1614,7 +1614,7 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding>
-            <element signature="e#0#595#0" expanded="true" />
+            <element signature="e#0#595#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1756,7 +1756,7 @@
         <state relative-caret-position="72">
           <caret line="18" column="1" selection-start-line="18" selection-start-column="1" selection-end-line="18" selection-end-column="1" />
           <folding>
-            <element signature="e#0#595#0" expanded="true" />
+            <element signature="e#0#595#0" expanded="false" />
           </folding>
         </state>
       </provider>
@@ -1798,8 +1798,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/ros_woz_dialog_project/src/main/java/com/github/woz_dialog/ros_woz_dialog_project/Speaker.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="507">
-          <caret line="86" column="0" selection-start-line="86" selection-start-column="0" selection-end-line="86" selection-end-column="0" />
+        <state relative-caret-position="553">
+          <caret line="84" column="0" selection-start-line="84" selection-start-column="0" selection-end-line="84" selection-end-column="0" />
           <folding>
             <element signature="imports" expanded="true" />
           </folding>

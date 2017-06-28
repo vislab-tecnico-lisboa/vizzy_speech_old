@@ -123,6 +123,9 @@ public class Speaker extends AbstractNodeMain implements ActionServerListener<Sp
         //Check if file exists
         File fileDir = new File(fullpath);
 
+        System.out.println("fileDir: " + fileDir);
+        System.out.println("file exists: " + fileDir.exists());
+
         if(fileDir.exists())
         {
             if(playingClip)
@@ -198,7 +201,6 @@ public class Speaker extends AbstractNodeMain implements ActionServerListener<Sp
         result = as.newResultMessage();
 
         String id;
-        String errorMsg;
 
         String language = currentGoal.getGoal().getLanguage();
         String voice = currentGoal.getGoal().getVoice();
