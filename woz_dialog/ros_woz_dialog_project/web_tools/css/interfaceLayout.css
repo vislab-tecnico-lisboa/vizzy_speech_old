@@ -1,6 +1,89 @@
 body {
   padding: 30px;
-  background: #efefefff;
+  background: #f2f2f4;
 }
 
+.btn_social_full{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+}
+
+.btn_id_full{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    filter: blur(20px);
+}
+
+.btn_persuade_full{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    filter: blur(20px);
+}
+
+.btn_instructions_full{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    filter: blur(20px);
+}
+
+.btn_gamectrl_full{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    filter: blur(20px);
+}
+
+
+.btn_motivation_full{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    filter: blur(20px);
+}
+
+.btn_gamectrl_full{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    filter: blur(20px);
+}
+
+.btn_confused_full{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    filter: blur(20px);
+}
+
+.btn_doubts_full{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    filter: blur(20px);
+}
+
+.btn_doubts_full{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    filter: blur(20px);
+}
+
+.btn_ground_ack_full{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    filter: blur(20px);
+}
+
+.btn_yesno_full{
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    filter: blur(20px);
+}
 
