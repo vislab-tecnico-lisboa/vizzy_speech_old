@@ -1,29 +1,55 @@
-<!DOCTYPE html>
-<html lang="en" class="no-js">
-<head>
-  <title>Vizzy of Oz</title>
-  <link rel="stylesheet" href="css/interfaceLayout.css">
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-	<script type="text/javascript" src="roslibjs/eventemitter2.js"></script>
-	<script type="text/javascript" src="roslibjs/roslib.js"></script>
-</head>
-<body>
-
-<svg height="0">
-  <filter id="f1">
-    <feGaussianBlur stdDeviation="23"/>
-  </filter>
-</svg>
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
 
 <svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
    width="100%"
    viewBox="0 0 1919.9999 1080.0004"
    id="full_panel"
-   class="full_panel">
+   version="1.1"
+   inkscape:version="0.91 r13725"
+   sodipodi:docname="full.svg">
+  <metadata
+     id="metadata407">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs405" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1366"
+     inkscape:window-height="704"
+     id="namedview403"
+     showgrid="false"
+     inkscape:zoom="0.44783432"
+     inkscape:cx="1352.4372"
+     inkscape:cy="535.53424"
+     inkscape:window-x="0"
+     inkscape:window-y="27"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="full_panel" />
   <g
-     id="btn_confused"
-     class="group_button"
-     onClick="expand(this)"
+     id="btn_confused_icon"
      transform="translate(622.39242,144.7808)">
     <circle
        style="fill:#ffffff;stroke:#d1d3d4;stroke-width:10;stroke-miterlimit:10"
@@ -162,14 +188,12 @@
   </g>
   <g
      transform="translate(18.7251,-9.99951)"
-     id="g6539"
-     class="group_button">
+     id="g6539">
     <circle
        r="162.02782"
        cy="498.93433"
        cx="941.27484"
        id="btn_yesno"
-       class="chilled"
        style="fill:#fafdfe;fill-opacity:1;fill-rule:evenodd;stroke:#e4e9ec;stroke-width:26.1169796;stroke-linecap:butt;stroke-linejoin:miter;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
     <g
        id="btn_yes"
@@ -221,8 +245,7 @@
        id="path3867" />
   </g>
   <g
-     id="btn_confused_joint_4"
-     class="btn_confused_joint"
+     id="btn_confused_join_4"
      transform="translate(622.39242,144.7808)">
     <text
        y="439.8042"
@@ -303,9 +326,7 @@
        style="fill:#fafdfe;stroke:#d4e2f4;stroke-width:5.11835384;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
-     id="btn_doubts"
-     class="group_button"
-     onClick="expand(this)"
+     id="btn_doubts_icon"
      transform="translate(598.31899,21.92376)">
     <circle
        style="fill:#fff8c6;stroke:#d1d3d4;stroke-width:10;stroke-miterlimit:10"
@@ -480,9 +501,7 @@
        style="fill:#f2f7fc;fill-opacity:0.50622385;stroke:#d4e2f4;stroke-width:5.11835384;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
-     id="btn_gamectrl"
-     class="group_button"
-     onClick="expand(this)"
+     id="btn_gamectrl_icon"
      transform="translate(1202.8572,-6.64749)">
     <path
        inkscape:connector-curvature="0"
@@ -526,9 +545,7 @@
        id="path613" />
   </g>
   <g
-     id="btn_userinstr"
-     class="group_button"
-     onClick="expand(this)"
+     id="btn_userinstr_icon"
      transform="translate(885.71425,121.92385)">
     <circle
        style="fill:#ffffff;stroke:#d1d3d4;stroke-width:10;stroke-miterlimit:10"
@@ -665,9 +682,7 @@
        id="path5171-6" />
   </g>
   <g
-     id="btn_motivation"
-     class="group_button"
-     onClick="expand(this)"
+     id="btn_motivation_icon"
      transform="translate(879.99995,247.63777)">
     <path
        inkscape:connector-curvature="0"
@@ -813,7 +828,6 @@
   </g>
   <g
      id="btn_ack_positive"
-     class="group_button"
      transform="translate(-3e-5,3.7e-4)">
     <path
        d="m 1245.846,966.543 -178.979,0 c -24.664,0 -44.658,17.963 -44.658,40.125 0,22.158 19.994,40.125 44.658,40.125 l 178.979,0 c 24.664,0 44.658,-17.967 44.658,-40.125 0,-22.162 -19.994,-40.125 -44.658,-40.125 z"
@@ -861,7 +875,6 @@
   </g>
   <g
      id="btn_ack_negative"
-     class="group_button"
      transform="translate(-3e-5,3.7e-4)">
     <path
        d="m 1541.33,965.799 -178.977,0 c -24.664,0 -44.658,17.963 -44.658,40.125 0,22.158 19.994,40.125 44.658,40.125 l 178.977,0 c 24.664,0 44.66,-17.967 44.66,-40.125 0,-22.162 -19.996,-40.125 -44.66,-40.125 z"
@@ -914,7 +927,6 @@
   </g>
   <g
      id="btn_ground_negative"
-     class="group_button"
      transform="translate(-3e-5,3.7e-4)">
     <path
        style="fill:#f9f9fa;fill-opacity:1;stroke:#e6e7e8;stroke-width:3.93094063;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -994,7 +1006,6 @@
   </g>
   <g
      id="btn_ground_positive"
-     class="group_button"
      transform="translate(-3e-5,3.7e-4)">
     <path
        id="path3467"
@@ -1073,9 +1084,7 @@
        style="clip-rule:evenodd;fill:#bcbec0;fill-rule:evenodd" />
   </g>
   <g
-     id="btn_id"
-     class="group_button"
-     onClick="expand(this)"
+     id="btn_id_icon"
      transform="translate(685.71425,196.20912)">
     <path
        inkscape:connector-curvature="0"
@@ -1234,8 +1243,8 @@
     </g>
   </g>
   <g
+     inkscape:label="#btn_id_joint_1"
      id="btn_id_joint_1"
-     class="btn_id_joint"
      transform="translate(685.71425,196.20912)">
     <text
        y="-11.687224"
@@ -1251,7 +1260,6 @@
   </g>
   <g
      id="btn_id_joint_2"
-     class="btn_id_joint"
      transform="translate(685.71425,196.20912)">
     <text
        y="81.68187"
@@ -1267,7 +1275,6 @@
   </g>
   <g
      id="btn_id_joint_3"
-     class="btn_id_joint"
      transform="translate(685.71425,196.20912)">
     <text
        y="182.20537"
@@ -1283,7 +1290,6 @@
   </g>
   <g
      id="btn_id_joint_4"
-     class="btn_id_joint"
      transform="translate(685.71425,196.20912)">
     <text
        y="286.83228"
@@ -1299,7 +1305,6 @@
   </g>
   <g
      id="btn_id_joint_7"
-     class="btn_id_joint"
      transform="translate(685.71425,196.20912)">
     <text
        y="593.46216"
@@ -1315,7 +1320,6 @@
   </g>
   <g
      id="btn_id_joint_5"
-     class="btn_id_joint"
      transform="translate(685.71425,196.20912)">
     <text
        y="391.26978"
@@ -1331,7 +1335,6 @@
   </g>
   <g
      id="btn_id_joint_6"
-     class="btn_id_joint"
      transform="translate(685.71425,196.20912)">
     <text
        y="495.62921"
@@ -1346,9 +1349,7 @@
        style="fill:#fafdfe;stroke:#d4e2f4;stroke-width:5.11835384;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
-     id="btn_persuade"
-     class="group_button"
-     onClick="expand(this)"
+     id="btn_persuade_icon"
      transform="translate(628.57134,-100.93315)">
     <path
        inkscape:connector-curvature="0"
@@ -1394,7 +1395,6 @@
   </g>
   <g
      id="btn_id_joint_8"
-     class="btn_id_joint"
      transform="translate(685.71425,196.20912)">
     <text
        y="682.89777"
@@ -1409,8 +1409,8 @@
        style="fill:#fafdfe;stroke:#d4e2f4;stroke-width:5.11835384;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
+     inkscape:label="#btn_userinstr_joint_1"
      id="btn_userinstr_joint_1"
-     class="btn_userinstr_joint"
      transform="translate(885.71425,121.92385)">
     <text
        y="-27.316257"
@@ -1426,7 +1426,6 @@
   </g>
   <g
      id="btn_userinstr_joint_2"
-     class="btn_userinstr_joint"
      transform="translate(885.71425,121.92385)">
     <text
        y="89.639854"
@@ -1442,7 +1441,6 @@
   </g>
   <g
      id="btn_userinstr_joint_3"
-     class="btn_userinstr_joint"
      transform="translate(885.71425,121.92385)">
     <text
        y="207.97287"
@@ -1458,7 +1456,6 @@
   </g>
   <g
      id="btn_userinstr_joint_4"
-     class="btn_userinstr_joint"
      transform="translate(885.71425,121.92385)">
     <text
        y="323.51096"
@@ -1474,7 +1471,6 @@
   </g>
   <g
      id="btn_userinstr_joint_5"
-     class="btn_userinstr_joint"
      transform="translate(885.71425,121.92385)">
     <text
        y="437.37714"
@@ -1490,7 +1486,6 @@
   </g>
   <g
      id="btn_userinstr_joint_6"
-     class="btn_userinstr_joint"
      transform="translate(885.71425,121.92385)">
     <text
        y="540.84888"
@@ -1506,7 +1501,6 @@
   </g>
   <g
      id="btn_userinstr_joint_7"
-     class="btn_userinstr_joint"
      transform="translate(885.71425,121.92385)">
     <text
        y="649.68964"
@@ -1522,7 +1516,6 @@
   </g>
   <g
      id="btn_userinstr_joint_8"
-     class="btn_userinstr_joint"
      transform="translate(885.71425,121.92385)">
     <text
        y="750.19745"
@@ -1537,8 +1530,8 @@
        style="fill:#fafdfe;stroke:#d4e2f4;stroke-width:5.11835384;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
+     inkscape:label="#btn_motivation_joint_1"
      id="btn_motivation_joint_1"
-     class="btn_motivation_joint"
      transform="translate(879.99995,247.63777)">
     <text
        y="-63.114609"
@@ -1554,7 +1547,6 @@
   </g>
   <g
      id="btn_motivation_joint_2"
-     class="btn_motivation_joint"
      transform="translate(879.99995,247.63777)">
     <text
        y="30.254608"
@@ -1570,7 +1562,6 @@
   </g>
   <g
      id="btn_motivation_joint_3"
-     class="btn_motivation_joint"
      transform="translate(879.99995,247.63777)">
     <text
        y="130.77609"
@@ -1586,7 +1577,6 @@
   </g>
   <g
      id="btn_motivation_joint_4"
-     class="btn_motivation_joint"
      transform="translate(879.99995,247.63777)">
     <text
        y="235.40298"
@@ -1602,7 +1592,6 @@
   </g>
   <g
      id="btn_motivation_joint_5"
-     class="btn_motivation_joint"
      transform="translate(879.99995,247.63777)">
     <text
        y="339.84149"
@@ -1618,7 +1607,6 @@
   </g>
   <g
      id="btn_motivation_joint_6"
-     class="btn_motivation_joint"
      transform="translate(879.99995,247.63777)">
     <text
        y="444.20087"
@@ -1634,7 +1622,6 @@
   </g>
   <g
      id="btn_motivation_joint_7"
-     class="btn_motivation_joint"
      transform="translate(879.99995,247.63777)">
     <g
        id="g7774">
@@ -1653,7 +1640,6 @@
   </g>
   <g
      id="btn_motivation_joint_8"
-     class="btn_motivation_joint"
      transform="translate(879.99995,247.63777)">
     <text
        y="636.47241"
@@ -1668,9 +1654,7 @@
        style="fill:#fafdfe;stroke:#d4e2f4;stroke-width:5.11835384;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
   <g
-     id="btn_social"
-     class="group_button"
-     onClick="expand(this)"
+     id="g5741"
      transform="translate(1320,-43.79063)">
     <path
        id="path17-9"
@@ -1862,7 +1846,6 @@
   </g>
   <g
      id="btn_persuade_joint_1"
-     class="btn_persuade_joint"
      transform="translate(628.57134,-100.93315)">
     <text
        id="text353"
@@ -1878,7 +1861,6 @@
   </g>
   <g
      id="btn_persuade_joint_2"
-     class="btn_persuade_joint"
      transform="translate(628.57134,-100.93315)">
     <text
        id="text359"
@@ -1894,7 +1876,6 @@
   </g>
   <g
      id="btn_persuade_joint_3"
-     class="btn_persuade_joint"
      transform="translate(628.57134,-100.93315)">
     <text
        id="text365"
@@ -1910,7 +1891,6 @@
   </g>
   <g
      id="btn_persuade_joint_4"
-     class="btn_persuade_joint"
      transform="translate(628.57134,-100.93315)">
     <text
        id="text371"
@@ -1926,7 +1906,6 @@
   </g>
   <g
      id="btn_persuade_joint_5"
-     class="btn_persuade_joint"
      transform="translate(628.57134,-100.93315)">
     <text
        id="text377"
@@ -1941,8 +1920,8 @@
        id="path6082" />
   </g>
   <g
+     inkscape:label="#btn_persuade_joint_7"
      id="btn_persuade_joint_6"
-     class="btn_persuade_joint"
      transform="translate(628.57134,-100.93315)">
     <text
        id="text383"
@@ -1958,7 +1937,6 @@
   </g>
   <g
      id="btn_persuade_joint_7"
-     class="btn_persuade_joint"
      transform="translate(628.57134,-100.93315)">
     <text
        id="text389"
@@ -1974,7 +1952,6 @@
   </g>
   <g
      id="btn_social_joint_1"
-     class="btn_social_joint"
      transform="translate(1320,-43.79063)">
     <path
        style="fill:#fafdfe;stroke:#d4e2f4;stroke-width:5.11835384;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1"
@@ -1990,7 +1967,6 @@
   </g>
   <g
      id="btn_social_joint_2"
-     class="btn_social_joint"
      transform="translate(1320,-43.79063)">
     <text
        y="268.70261"
@@ -2006,7 +1982,6 @@
   </g>
   <g
      id="btn_social_joint_3"
-     class="btn_social_joint"
      transform="translate(1320,-43.79063)">
     <text
        y="387.03568"
@@ -2022,7 +1997,6 @@
   </g>
   <g
      id="btn_social_joint_4"
-     class="btn_social_joint"
      transform="translate(1320,-43.79063)">
     <text
        y="502.57373"
@@ -2038,7 +2012,6 @@
   </g>
   <g
      id="btn_social_joint_5"
-     class="btn_social_joint"
      transform="translate(1320,-43.79063)">
     <text
        y="616.44"
@@ -2054,7 +2027,6 @@
   </g>
   <g
      id="btn_social_joint_6"
-     class="btn_social_joint"
      transform="translate(1320,-43.79063)">
     <text
        y="721.91156"
@@ -2070,7 +2042,6 @@
   </g>
   <g
      id="btn_social_joint_7"
-     class="btn_social_joint"
      transform="translate(1320,-43.79063)">
     <text
        y="826.41461"
@@ -2086,7 +2057,6 @@
   </g>
   <g
      id="btn_social_joint_8"
-     class="btn_social_joint"
      transform="translate(1320,-43.79063)">
     <text
        y="924.90973"
@@ -2101,12 +2071,3 @@
        style="fill:#fafdfe;stroke:#d4e2f4;stroke-width:5.11835384;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" />
   </g>
 </svg>
-
-
-
-
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/snap.svg/0.3.0/snap.svg-min.js"></script>
-<script type="text/javascript" src="js/button_events.js"></script>
-<!-- <script type='text/javascript' src="js/button_animator.js"></script> -->
-</html>

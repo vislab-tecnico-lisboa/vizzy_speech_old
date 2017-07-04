@@ -3,87 +3,46 @@ body {
   background: #f2f2f4;
 }
 
-.btn_social_full{
+.full_panel{
     position: absolute;
     top: 0%;
     left: 0%;
 }
 
-.btn_id_full{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    filter: blur(20px);
+.btn_social_joint{
+    display: none;
 }
 
-.btn_persuade_full{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    filter: blur(20px);
+.btn_id_joint{
+    display: none;
 }
 
-.btn_instructions_full{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    filter: blur(20px);
+.btn_persuade_joint{
+    display: none;
 }
 
-.btn_gamectrl_full{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    filter: blur(20px);
+.btn_userinstr_joint{
+    display: none;
+}
+
+.btn_motivation_joint{
+    display: none;
+}
+
+.btn_confused_joint{
+    display: none;
+}
+
+.btn_doubts_joint{
+    display: none;
+}
+
+.btn_gamectrl_joint{
+    display: none;
 }
 
 
-.btn_motivation_full{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    filter: blur(20px);
-}
-
-.btn_gamectrl_full{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    filter: blur(20px);
-}
-
-.btn_confused_full{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    filter: blur(20px);
-}
-
-.btn_doubts_full{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    filter: blur(20px);
-}
-
-.btn_doubts_full{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    filter: blur(20px);
-}
-
-.btn_ground_ack_full{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    filter: blur(20px);
-}
-
-.btn_yesno_full{
-    position: absolute;
-    top: 0%;
-    left: 0%;
-    filter: blur(20px);
+.chilled{
+    filter:url(#f1);
 }
 
