@@ -41,6 +41,21 @@ body {
     display: none;
 }
 
+.btn_ack_positive_joint{
+    display: none;
+}
+
+.btn_ground_negative_joint{
+    display: none;
+}
+
+.btn_ground_positive_joint{
+    display: none;
+}
+
+.btn_ack_negative_joint{
+    display: none;
+}
 
 .chilled{
     filter:url(#f1);
